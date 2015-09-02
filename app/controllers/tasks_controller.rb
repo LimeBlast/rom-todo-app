@@ -1,11 +1,13 @@
 class TasksController < ApplicationController
   def index
-    render locals: { tasks: tasks(params[:status]) }
+    render locals: {
+             tasks: tasks.index_view(params[:status]).as(:tasks)
+           }
   end
 
   private
 
-  def tasks(status)
-    rom.relation(:tasks).index_view(status)
+  def tasks
+    rom.relation(:tasks)
   end
 end

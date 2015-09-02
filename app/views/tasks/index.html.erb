@@ -3,8 +3,8 @@
 <ul>
   <% tasks.each do |task| %>
     <li>
-      <span><%= task[:title] %></span>
-      <span><%= status_label(task[:is_complete]) %></span>
+      <span><%= task.title %></span>
+      <span><%= task.status_label %></span>
     </li>
   <% end %>
 </ul>

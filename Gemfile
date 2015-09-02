@@ -31,9 +31,11 @@ group :development, :test do
 end
 
 
-gem 'rom', '0.6.0'
-gem 'rom-sql', '0.4.0'
-gem 'rom-rails', '0.3.0'
+gem 'rom'
+gem 'rom-sql'
+gem 'rom-rails'
+gem 'virtus'
+
 group :test do
   gem 'rspec'
   gem 'rspec-rails'

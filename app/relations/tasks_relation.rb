@@ -1,6 +1,10 @@
 class TasksRelation < ROM::Relation[:sql]
   dataset :tasks
 
+  def by_id(id)
+    where(id: id)
+  end
+
   def index_view(status)
     case status
       when 'active'

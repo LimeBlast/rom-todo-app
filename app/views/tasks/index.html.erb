@@ -4,7 +4,10 @@
   <% tasks.each do |task| %>
     <li>
       <span><%= task.title %></span>
-      <span><%= task.status_label %></span>
+      <b><%= task.status_label %></b>
+      <%= link_to 'Edit', edit_task_path(task.id) %>
     </li>
   <% end %>
 </ul>
+
+<%= link_to 'New', new_task_path %>

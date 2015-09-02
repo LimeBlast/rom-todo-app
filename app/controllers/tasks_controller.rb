@@ -35,9 +35,19 @@ class TasksController < ApplicationController
     end
   end
 
+  def delete
+    tasks_command.try do
+      tasks_command.delete.by_id(params[:id])
+    end
+  end
+
   private
 
   def tasks
     rom.relation(:tasks)
+  end
+
+  def tasks_command
+    rom.command(:tasks)
   end
 end

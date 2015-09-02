@@ -1,9 +1,22 @@
 class TasksRelation < ROM::Relation[:sql]
   dataset :tasks
 
-  # define your methods here ie:
-  #
-  # def all
-  #   select(:id, :name).order(:id)
-  # end
+  def index_view(status)
+    case status
+      when 'active'
+        active
+      when 'completed'
+        completed
+      else
+        self
+    end
+  end
+
+  def active
+    where(is_completed: false)
+  end
+
+  def completed
+    where(is_completed: true)
+  end
 end

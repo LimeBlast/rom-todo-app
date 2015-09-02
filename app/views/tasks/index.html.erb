@@ -1,7 +1,10 @@
+<%= render 'filter_nav' %>
+
 <ul>
   <% tasks.each do |task| %>
     <li>
-      <%= task[:title] %>
+      <span><%= task[:title] %></span>
+      <span><%= status_label(task[:is_complete]) %></span>
     </li>
   <% end %>
 </ul>
